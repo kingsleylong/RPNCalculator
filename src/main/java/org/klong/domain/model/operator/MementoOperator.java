@@ -11,7 +11,6 @@ public abstract class MementoOperator implements Operator {
 
     @Override
     public void operate() {
-//        this.stack.remember();
         processOperation();
     }
 
