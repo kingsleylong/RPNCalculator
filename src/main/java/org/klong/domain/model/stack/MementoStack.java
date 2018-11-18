@@ -5,7 +5,7 @@ import java.util.Stack;
 public class MementoStack<E> extends Stack<E>{
     private Stack<Stack<E>> memento = new Stack<>();
 
-    public void inputOperand(E operand) {
+    public void inputElement(E operand) {
         this.remember();
         this.push(operand);
     }

@@ -1,5 +1,6 @@
 package org.klong.domain.model.calculator;
 
+import org.klong.domain.model.operator.OperationStatus;
 import org.klong.domain.model.stack.MementoStack;
 import org.klong.domain.model.operator.Operator;
 
@@ -26,36 +27,36 @@ public class Calculator {
         this.divideOperator = divideOperator;
     }
 
-    public void add() {
-        this.addOperator.operate();
+    public OperationStatus add() {
+        return this.addOperator.operate();
     }
 
-    public void substract() {
-        this.substractOperator.operate();
+    public OperationStatus substract() {
+        return this.substractOperator.operate();
     }
 
-    public void multiply() {
-        this.multiplyOperator.operate();
+    public OperationStatus multiply() {
+        return this.multiplyOperator.operate();
     }
 
-    public void divide() {
-        this.divideOperator.operate();
+    public OperationStatus divide() {
+        return this.divideOperator.operate();
     }
 
-    public void sqrt() {
-        this.sqrtOperator.operate();
+    public OperationStatus sqrt() {
+        return this.sqrtOperator.operate();
     }
 
-    public void undo() {
-        this.undoOperator.operate();
+    public OperationStatus undo() {
+        return this.undoOperator.operate();
     }
 
-    public void clear() {
-        this.clearOperator.operate();
+    public OperationStatus clear() {
+        return this.clearOperator.operate();
     }
 
     public void input(Double operand) {
-        this.stack.inputOperand(operand);
+        this.stack.inputElement(operand);
     }
 
     public Stack<Double> output() {

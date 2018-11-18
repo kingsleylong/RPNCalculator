@@ -10,11 +10,11 @@ public abstract class MementoOperator implements Operator {
     }
 
     @Override
-    public void operate() {
-        processOperation();
+    public OperationStatus operate() {
+        return processOperation();
     }
 
-    public abstract void processOperation();
+    public abstract OperationStatus processOperation();
 
     public void setStack(MementoStack<Double> stack) {
         this.stack = stack;
@@ -22,5 +22,10 @@ public abstract class MementoOperator implements Operator {
 
     public MementoStack<Double> getStack() {
         return stack;
+    }
+
+    protected boolean verifyOperand(int noOfOperandsRequired) {
+        OperandSpecification specification = new OperandSpecification();
+        return specification.isSatisfiedBy(this.stack, noOfOperandsRequired);
     }
 }

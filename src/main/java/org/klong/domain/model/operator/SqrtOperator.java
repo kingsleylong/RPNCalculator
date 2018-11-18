@@ -8,10 +8,11 @@ public class SqrtOperator extends MementoOperator {
     }
 
     @Override
-    public void processOperation() {
+    public OperationStatus processOperation() {
         getStack().remember();
         Double operand = getStack().pop();
         double result = Math.sqrt(operand);
         getStack().push(result);
+        return OperationStatus.SUCCESS;
     }
 }

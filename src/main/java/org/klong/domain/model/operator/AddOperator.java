@@ -9,12 +9,17 @@ public class AddOperator extends MementoOperator {
     }
 
     @Override
-    public void processOperation() {
-        super.getStack().remember();
-        Double rightOperand = this.getStack().pop();
-        Double leftOperand = this.getStack().pop();
-        //todo precision
-        Double result = leftOperand + rightOperand;
-        this.getStack().push(result);
+    public OperationStatus processOperation() {
+        if (this.verifyOperand(2)) {
+            super.getStack().remember();
+            Double rightOperand = this.getStack().pop();
+            Double leftOperand = this.getStack().pop();
+            //todo precision
+            Double result = leftOperand + rightOperand;
+            this.getStack().push(result);
+            return OperationStatus.SUCCESS;
+        } else {
+            return OperationStatus.INSUFFICIENT_PARAM;
+        }
     }
 }

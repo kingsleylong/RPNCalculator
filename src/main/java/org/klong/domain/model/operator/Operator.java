@@ -1,5 +1,5 @@
 package org.klong.domain.model.operator;
 
 public interface Operator {
-    void operate();
+    OperationStatus operate();
 }

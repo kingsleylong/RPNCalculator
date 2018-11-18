@@ -9,12 +9,13 @@ public class DivideOperator extends MementoOperator {
     }
 
     @Override
-    public void processOperation() {
+    public OperationStatus processOperation() {
         super.getStack().remember();
         Double rightOperand = this.getStack().pop();
         Double leftOperand = this.getStack().pop();
         //todo precision
         Double result = leftOperand / rightOperand;
         this.getStack().push(result);
+        return OperationStatus.SUCCESS;
     }
 }

@@ -10,12 +10,13 @@ public class UndoOperator extends MementoOperator{
     }
 
     @Override
-    public void processOperation() {
+    public OperationStatus processOperation() {
         this.getStack().clear();
 
         if (!this.getStack().isMementoEmpty()) {
             Stack<Double> recentStack = this.getStack().retriveMemento();
             this.getStack().addAll(recentStack);
         }
+        return OperationStatus.SUCCESS;
     }
 }

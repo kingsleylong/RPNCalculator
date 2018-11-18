@@ -9,8 +9,9 @@ public class ClearOperator extends MementoOperator {
     }
 
     @Override
-    public void processOperation() {
+    public OperationStatus processOperation() {
         this.getStack().remember();
         this.getStack().clear();
+        return OperationStatus.SUCCESS;
     }
 }
